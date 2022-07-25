@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" type="collection"/>
+    <element extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="other" type="string"/>
+        <element label="Request for" mandatory="true" max_length="32" name="request_for" reference="sys_user" type="reference"/>
+        <element choice="3" default="home" label="Request type" max_length="40" name="request_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="facilities" value="facilities"/>
+                <element inactive_on_update="false" label="hr" value="hr"/>
+                <element inactive_on_update="false" label="legal" value="legal"/>
+            </choice>
+        </element>
+        <element choice="1" label="What needed" max_length="40" name="what_needed" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="IT" value="IT"/>
+                <element inactive_on_update="false" label="Other" value="other"/>
+            </choice>
+        </element>
+    </element>
 </database>
